@@ -1,13 +1,23 @@
 package com.sengi.JobApplication.job;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "job_table")
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
+
     private String title;
     private String description;
     private String maxSalary;
     private String minSalary;
     private String location;
 
+    public Job(){
+
+    }
     public Job(String location, String minSalary, String maxSalary, String description, String title, Long id) {
         this.location = location;
         this.minSalary = minSalary;
